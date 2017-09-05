@@ -64,6 +64,7 @@ class Transaction:
                 'cannot enter context: already in an `async with` block')
         self._managed = True
         await self.start()
+        return self
 
     async def __aexit__(self, extype, ex, tb):
         try:
